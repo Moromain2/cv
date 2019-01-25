@@ -5,6 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+config.assets.enabled = true
 
 module OnlineCv
   class Application < Rails::Application
@@ -13,7 +14,6 @@ module OnlineCv
 
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
-    config.assets.initialize_on_precompile = false
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
