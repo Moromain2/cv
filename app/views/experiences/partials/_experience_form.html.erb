@@ -1,0 +1,49 @@
+<div class="form-container">
+  <%= form_for @experience do |f| %>
+
+    <div class="form-field">
+      <%= f.label :company, 'Company' %><br>
+      <%= f.text_field :company %><br>
+      <br>
+    </div>
+
+    <div class="form-field">
+      <%= f.label :role, 'Role' %><br>
+      <%= f.text_field :role %><br>
+      <br>
+    </div>
+
+    <div class="form-field">
+      <%= f.label :start_date, 'Start Date' %><br>
+      <%= f.text_field :start_date %><br>
+      <br>
+    </div>
+
+    <div class="form-field">
+      <%= f.label :end_date, 'End Date' %><br>
+      <%= f.text_field :end_date %><br>
+      <br>
+    </div>
+
+    <div class="form-field">
+      <%= f.label :location, 'Location' %><br>
+      <%= f.text_field :location %><br>
+      <br>
+    </div>
+
+    <div class="form-field">
+      <%= f.label :body, 'Content' %><br>
+      <%= f.text_area :body %><br>
+      <br>
+    </div>
+
+    <% if current_page?(action: 'new') %>
+      <%= f.submit 'Submit', :class => 'button button-neutral' %>
+    <% end %>
+    <% if current_page?(action: 'edit') %>
+      <%= f.submit 'Mettre à Jour', :class => 'button button-neutral' %>
+      <%= link_to 'Delete', @experience, method: :delete, data: {confirm: 'Do you really want to delete this experience?'}, :class=> 'button button-danger' %>
+    <% end %>
+
+  <% end %>
+</div>

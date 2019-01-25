@@ -1,0 +1,36 @@
+<div class="navbar-container">
+  <div class="navbar-logo">
+    <%= link_to '#hero' do %>
+      <h1>Romain Mosser</h1>
+    <% end %>
+  </div>
+  <div class="navbar-menu-icon">
+    <div class="menu-icon-container">
+      <div class="menu-icon-line"></div>
+      <div class="menu-icon-line"></div>
+    </div>
+  </div>
+  <div class="navbar-links">
+    <nav>
+      <ul>
+        <li><%= link_to 'Experiences', root_path %></li>
+        <li><%= link_to 'Education', '#education' %></li>
+        <li><%= link_to 'Skills', root_path %></li>
+        <li><%= link_to 'About', root_path %></li>
+        <li><%= link_to 'Contact', '#contact' %></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="mobile-menu menu-inactive">
+  <nav>
+    <ul>
+      <li><%= link_to 'Experiences', root_path, :class=> "mobile-menu-link" %></li>
+      <li><%= link_to 'Education', '#education', :class=> "mobile-menu-link" %></li>
+      <li><%= link_to 'Skills', root_path, :class=> "mobile-menu-link" %></li>
+      <li><%= link_to 'About', root_path, :class=> "mobile-menu-link" %></li>
+      <li><%= link_to 'Contact', '#contact', :class=> "mobile-menu-link" %></li>
+    </ul>
+  </nav>
+</div>

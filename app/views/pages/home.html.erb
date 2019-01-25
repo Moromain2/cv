@@ -1,0 +1,177 @@
+<div class="page-wrapper">
+  <section id="hero">
+    <div class="hero-container">
+      <div class="hero-intro-text">
+        <p>
+          <strong>Hello my name is <span>Romain</span>,</strong><br>
+          For a year and a half I’ve worked as a Branding Project Manager at Twid, a Paris based design agency.
+          Just comming back from a one year post graduation trip in Australia, I am seeking new profesionnal opportunities
+          in a design or communication agency.
+        </p>
+        <%= link_to 'Get in touch', "mailto: mosser.romain@gmail.com", :class => 'button button-neutral' %>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <% @experiences.each do |experience| %>
+      <div class="element-container">
+        <div class="element-title-card"><%= experience.company %></div>
+        <div class="element-body-card element-inactive"><%= experience.body %></div>
+      </div>
+    <% end %>
+  </section>
+
+  <section id="education">
+    <div class="education-container">
+      <h1 class="section-header">Education</h1>
+      <div class="education-cards-container">
+
+        <div class="education-card">
+          <h2 class="card-header">Iscom Paris<span>.</span></h2>
+          <h3 class="card-subheader">2017 - Masters Degree</h3>
+          <p class="card-text">
+            It was a very profesionnalizing degree that took me through several internships. For my two last years of specialization,
+            I choosed to turn myself towards the Design Thinking section which helped me to envision a new way of working.
+          </p>
+        </div>
+
+        <div class="education-card">
+          <h2 class="card-header">Baccalauréat<span>.</span></h2>
+          <h3 class="card-subheader">2012 - Social & Economics</h3>
+          <p class="card-text">
+            The French High School Certificate was the big achivement after three years studying all the basic
+            displines such as mathematics, history, science…
+          </p>
+        </div>
+
+        <div class="education-card">
+          <h2 class="card-header">The Hacking Project<span>.</span></h2>
+          <h3 class="card-subheader">2017 - Web development Bootcamp</h3>
+          <p class="card-text">
+            During a three month experience, I have challenged myself to acquire some skills in web development.
+            It really helped me to envision problem solving differently.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="skills-container">
+    <h1 class="section-header">Skills</h1>
+    <div class="skill-category-container">
+      <h2 class="section-subheader">Web Development</h2>
+      <div class="skill-card-wrapper">
+        <% @skills.each do |skill| %>
+          <% if skill.category == 'Web Development' %>
+            <div class="skill-card">
+                <% if skill.image.attached? %>
+                  <div class="skill-card-image-wrapper">
+                    <%= image_tag(skill.image) %>
+                  </div>
+                <% end %>
+                <h3 class="skill-card-header"><%= skill.title %></h3>
+                <p class="skill-card-rating"><%= skill.rating %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="skill-category-container">
+      <h2 class="section-subheader">Computing Tools</h2>
+      <div class="skill-card-wrapper">
+        <% @skills.each do |skill| %>
+          <% if skill.category == 'Computing' %>
+            <div class="skill-card">
+                <% if skill.image.attached? %>
+                  <div class="skill-card-image-wrapper">
+                    <%= image_tag(skill.image) %>
+                  </div>
+                <% end %>
+                <h3 class="skill-card-header"><%= skill.title %></h3>
+                <p class="skill-card-rating"><%= skill.rating %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="skill-category-container">
+      <h2 class="section-subheader">Languages</h2>
+      <div class="skill-card-wrapper">
+        <% @skills.each do |skill| %>
+          <% if skill.category == 'Language' %>
+            <div class="skill-card">
+                <% if skill.image.attached? %>
+                  <div class="skill-card-image-wrapper">
+                    <%= image_tag(skill.image) %>
+                  </div>
+                <% end %>
+                <h3 class="skill-card-header"><%= skill.title %></h3>
+                <p class="skill-card-rating"><%= skill.rating %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section id="about">
+    <div class="about-container">
+      <h1 class="section-header">About Me</h1>
+      <p class="card-text">
+        Throughout all my experiences and by developping some extra competencies
+        on my spare time, I managed to become a real expert in most of the aspects of the design process.
+         Here are my main areas of expertise.
+      </p>
+      <div class="about-cards-container">
+
+        <div class="about-card">
+          <h1 class="card-header">Analytics<span>.</span></h1>
+          <p class="card-text">
+            Before starting any project, I like to take the time to understand the clients objectives.
+            What he wants to acheive and what levers can be used to do so. I also believe that the final user and it’s expectations
+            have to be a the center of the reflexion. To achieve that efficiently, I try to always watch the trends and to be aware
+            of new consumptions habits.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h1 class="card-header">Planning<span>.</span></h1>
+          <p class="card-text">
+            In order to achieve a project propely, I always focus on managing the time and understanding the persons I am working with.
+            With a year and a half experience as a project manager in a design agency, I have learned adapt myself to several types of projects
+            with clients from different horizons, objectives and time frames.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h1 class="card-header">Design<span>.</span></h1>
+          <p class="card-text">
+            In order to achieve a project propely, I always focus on managing the time and understanding the persons I am working with.
+            With a year and a half experience as a project manager in a design agency, I have learned adapt myself to several types of projects
+            with clients from different horizons, objectives and time frames.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-filter">
+      <div class="contact-wrapper">
+        <div class="contact-container">
+          <h1 class="section-header">Thanks for visiting</h1>
+          <div class="about-card">
+            <h2 class="card-header">Feel free to contact me<span>.</span></h2>
+            <p>I’ll be glad to chat with you if you are seeking new talents for your agency.</p>
+            <%= link_to 'Get in touch', 'mailto: mosser.romain@gmail.com', :class => 'button button-neutral' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

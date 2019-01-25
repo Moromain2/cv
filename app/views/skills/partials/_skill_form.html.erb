@@ -1,0 +1,27 @@
+<%= form_for @skill do |f| %>
+
+  <%= f.label :category, 'Category' %> <br>
+  <%= f.select(:category, Skill::CATEGORY_LIST) %> <br>
+  <br>
+
+  <%= f.label :image, 'Image' %> <br>
+  <%= f.file_field :image %> <br>
+  <br>
+
+  <%= f.label :title, 'Title' %> <br>
+  <%= f.text_field :title %> <br>
+  <br>
+
+  <%= f.label :rating, 'Rating' %> <br>
+  <%= f.text_field :rating %> <br>
+  <br>
+
+  <% if current_page?(action: 'new') %>
+    <%= f.submit 'Submit', :class => 'button button-neutral' %>
+  <% end %>
+  <% if current_page?(action: 'edit') %>
+    <%= f.submit 'Update', :class => 'button button-neutral' %>
+    <%= link_to 'Delete', @skill, method: :delete, data: {confirm: 'Do you really want to delete this skill?'}, :class=> 'button button-danger' %>
+  <% end %>
+
+<% end %>
