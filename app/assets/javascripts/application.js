@@ -17,8 +17,8 @@
 
 window.onload = function() {
 
-  const mobileMenuIcon = document.querySelector('.navbar-menu-icon')
-  const mobileMenu = document.querySelector('.mobile-menu')
+  var mobileMenuIcon = document.querySelector('.navbar-menu-icon')
+  var mobileMenu = document.querySelector('.mobile-menu')
 
   mobileMenuClassToggle  = function() {
     console.log('clicked')
