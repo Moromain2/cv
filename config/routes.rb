@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :skills
   get "skills/new"
   get "skills/edit"
+
+  get "download_pdf", to: "pages#download_pdf"
 end

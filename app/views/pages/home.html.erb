@@ -14,12 +14,20 @@
   </section>
 
   <section id="experience">
-    <% @experiences.each do |experience| %>
-      <div class="element-container">
-        <div class="element-title-card"><%= experience.company %></div>
-        <div class="element-body-card element-inactive"><%= experience.body %></div>
-      </div>
-    <% end %>
+    <h1 class="section-header">Experiences</h1>
+    <div class="experience-cards-container">
+      <% @experiences.each do |experience| %>
+        <div class="experience-card">
+          <h2 class="card-header"><%= experience.company %></h2>
+          <h3 class="card-subheader"><%= experience.role %></h3>
+          <button class="button button-neutral experience-card-button">Expand</button>
+          <div class="experience-body-container experience-body-inactive">
+            <h4><%= experience.start_date %> - <%= experience.end_date %>, <%= experience.location %></h4>
+            <p><%= experience.body %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </section>
 
   <section id="education">
@@ -174,4 +182,6 @@
       </div>
     </div>
   </section>
+
+  <%= render '/partials/footer' %>
 </div>

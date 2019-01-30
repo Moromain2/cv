@@ -1,6 +1,6 @@
 <div class="navbar-container">
   <div class="navbar-logo">
-    <%= link_to '#hero' do %>
+    <%= link_to root_path(anchor: 'hero'), data: { turbolinks: false } do %>
       <h1>Romain Mosser</h1>
     <% end %>
   </div>
@@ -13,11 +13,11 @@
   <div class="navbar-links">
     <nav>
       <ul>
-        <li><%= link_to 'Experiences', root_path %></li>
-        <li><%= link_to 'Education', '#education' %></li>
-        <li><%= link_to 'Skills', root_path %></li>
-        <li><%= link_to 'About', root_path %></li>
-        <li><%= link_to 'Contact', '#contact' %></li>
+        <li><%= link_to 'Experiences', root_path(anchor: 'experience'), data: { turbolinks: false } %></li>
+        <li><%= link_to 'Education', root_path(anchor: 'education'), data: { turbolinks: false } %></li>
+        <li><%= link_to 'Skills', root_path(anchor: 'skills'), data: { turbolinks: false } %></li>
+        <li><%= link_to 'About', root_path(anchor: 'about'), data: { turbolinks: false } %></li>
+        <li><%= link_to 'Contact', root_path(anchor: 'contact'), data: { turbolinks: false } %></li>
       </ul>
     </nav>
   </div>
@@ -26,11 +26,11 @@
 <div class="mobile-menu menu-inactive">
   <nav>
     <ul>
-      <li><%= link_to 'Experiences', root_path, :class=> "mobile-menu-link" %></li>
-      <li><%= link_to 'Education', '#education', :class=> "mobile-menu-link" %></li>
-      <li><%= link_to 'Skills', root_path, :class=> "mobile-menu-link" %></li>
-      <li><%= link_to 'About', root_path, :class=> "mobile-menu-link" %></li>
-      <li><%= link_to 'Contact', '#contact', :class=> "mobile-menu-link" %></li>
+      <li><%= link_to 'Experiences', root_path(anchor: 'experience'), data: { turbolinks: false }, :class => 'mobile-menu-link' %></li>
+      <li><%= link_to 'Education', root_path(anchor: 'education'), data: { turbolinks: false }, :class => 'mobile-menu-link' %></li>
+      <li><%= link_to 'Skills', root_path(anchor: 'skills'), data: { turbolinks: false }, :class => 'mobile-menu-link' %></li>
+      <li><%= link_to 'About', root_path(anchor: 'about'), data: { turbolinks: false }, :class => 'mobile-menu-link' %></li>
+      <li><%= link_to 'Contact', root_path(anchor: 'contact'), data: { turbolinks: false }, :class => 'mobile-menu-link' %></li>
     </ul>
   </nav>
 </div>

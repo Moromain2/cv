@@ -50,11 +50,15 @@ body {
 section {
   padding: 0 5%;
 }
+button {
+  all: unset;
+}
 .page-wrapper {
   height: $screen-height-with-header;
   overflow-x: scroll;
   position: absolute;
   top: $header-height;
+  z-index: 3;
 }
 
 /* UI */
@@ -111,6 +115,7 @@ div[class$='-card'] {
 
 /* Navbar */
 .navbar-container {
+  z-index: 2;
   width: 100%;
   left: 0;
   position: fixed;
@@ -146,6 +151,7 @@ div[class$='-card'] {
   .navbar-menu-icon {
     display: none;
     width: 3rem;
+    height: 1.5rem;
     .menu-icon-container {
       width: 100%;
       .menu-icon-line {
@@ -186,12 +192,14 @@ div[class$='-card'] {
 }
 
 .menu-inactive {
+  display: none;
   opacity: 0;
   height: 0;
 }
 .menu-active {
   opacity: 1;
   height: $screen-height-with-header;
+  display: flex;
 }
 
 /* Hero section */
@@ -218,21 +226,31 @@ div[class$='-card'] {
 }
 
 /* Experience Section */
-.element-container {
-  display: flex;
-  justify-content: space-between;
-}
-.element-inactive {
-  color: blue
-}
-.element-active {
-  color: red;
-}
-.element-title-card {
-  width: 25%;
-}
-.element-body-card {
-  width: 75%;
+#experience {
+  .experience-card {
+    margin-bottom: 1rem;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    .card-subheader {
+      margin-bottom: 1rem;
+    }
+    .button {
+      font-size: .9rem;
+    }
+    .experience-body-container {
+      margin-top: 1.5rem;
+      -webkit-transition: all ease-in-out 200ms;
+    }
+    .experience-body-active {
+      height: auto;
+      display: block;
+    }
+    .experience-body-inactive {
+      height: 0;
+      display: none;
+    }
+  }
 }
 
 /* Education & Education Sections */
@@ -347,6 +365,28 @@ div[class$='-card'] {
   }
 }
 
+/* Footer */
+footer {
+  background-color: $text-color;
+  color: $light-color;
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 5%;
+    line-height: 1.5rem;
+    li h4 {
+      margin-bottom: 1rem;
+      font-family: $header-font;
+    }
+    .footer-information {
+      text-align: center;
+    }
+    .social-links {
+      text-align: right;
+    }
+  }
+}
+
 /* Media Queries */
 @media screen and (max-width: 1024px) {
   .navbar-container {
@@ -355,11 +395,16 @@ div[class$='-card'] {
       display: none;
     }
     .navbar-menu-icon {
-      display: block;
+      display: flex;
+      align-items: center;
     }
   }
-  .mobile-menu {
-    display: flex;
+  .contact-bar-container {
+    padding: 1rem 2rem;
+  }
+  .contact-bar-container.inactive {
+    margin-bottom: 1rem;
+    transform: scale(1);
   }
   section {
     height: auto !important;
@@ -374,6 +419,11 @@ div[class$='-card'] {
   #contact {
     height: $screen-height-with-header !important;
   }
+  footer {
+    .footer-container {
+      padding: 5rem 1rem;
+    }
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -385,6 +435,20 @@ div[class$='-card'] {
     &:nth-of-type(5) {
       margin-top: 1rem;
       margin-right: 1rem;
+    }
+  }
+  footer {
+    .footer-container {
+      flex-direction: column;
+      div {
+        margin-bottom: 2rem;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        ul {
+          text-align: center;
+        }
+      }
     }
   }
 }
